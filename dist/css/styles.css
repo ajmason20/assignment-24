@@ -2,10 +2,118 @@
   box-sizing: border-box; }
 
 body {
-  background: limegreen; }
+  background: #fff; }
 
 h2 {
   color: maroon;
   border-bottom: 4px solid maroon; }
+
+#app-container {
+  background: #fff;
+  font-family: sans-serif;
+  font-weight: lighter; }
+
+.header {
+  background-color: #012446;
+  padding-top: 4px;
+  padding-bottom: 4px; }
+
+.header h1 {
+  background-color: #012446;
+  color: #fff;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 40px;
+  border-left: thin solid #fff;
+  border-right: thin solid #fff;
+  margin-left: 110px;
+  width: 25%;
+  padding-top: 4px;
+  padding-bottom: 4px; }
+
+.todo-container {
+  margin-left: auto;
+  margin-right: auto;
+  border: solid thick #012446;
+  border-radius: 10px;
+  max-width: 75%; }
+
+.item-input {
+  padding-top: 30px;
+  text-align: center;
+  background: #fff;
+  border-bottom: solid medium #bbb;
+  padding-bottom: 30px; }
+
+.item-input button {
+  border: solid thin #e67e22;
+  color: #fff;
+  padding-top: 4px;
+  border-radius: 10px; }
+
+.item-input input {
+  width: 40%;
+  padding: 10px;
+  border: solid medium #e67e22; }
+
+.item-input i {
+  font-size: 12px;
+  padding: 10px; }
+
+.todo-list {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%; }
+
+.todo-list i {
+  color: #012446;
+  float: right;
+  margin-right: 20px;
+  font-size: 28px; }
+
+.todo-list h3 {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 30px;
+  background-color: #012446;
+  border-radius: 10px;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 12px; }
+
+.todo-list ul {
+  background-color: #fff;
+  color: #012446;
+  padding: 12px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid medium #bbb;
+  border-radius: 10px;
+  font-family: serif;
+  font-weight: lighter;
+  line-height: 2;
+  list-style-type: none; }
+
+.todo-list li {
+  font-size: 20px;
+  margin-left: 30px;
+  padding-top: 16px; }
+
+.todo-list input[type="checkbox"] {
+  height: 24px;
+  width: 24px; }
+
+label.check-box-style > * {
+  display: inline-block;
+  line-height: 20px;
+  vertical-align: middle;
+  margin: 0 4px 0 0; }
+
+input [type="checkbox"] {
+  -webkit-appearance: none;
+  border: 1px solid #333;
+  position: relative;
+  z-index: 9; }
 
 /*# sourceMappingURL=styles.css.map*/
