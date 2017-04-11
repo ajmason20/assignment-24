@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 
     getInitialState: function(){
       return {
-        toDoList: ['Feed the dog', 'Go for a run', 'Learn React']
+        toDoList: ['Feed the dog', 'Go for a run', 'Learn About React Components & State']
       }
     },
 
@@ -28,13 +28,20 @@ import ReactDOM from 'react-dom';
       });
     },
 
+    _addDate: function(date){
+      console.log(date)
+      this.setState({
+        toDoList: this.state.toDoList + date
+      });
+    },
+
     render: function(){
       return (
         <div className="todo-container">
           <div className="header">
             <h1>Doing Things</h1>
           </div>
-          <UpdateItems _updateItemsCb={this._addItems}/>
+          <UpdateItems _updateItemsCb={this._addItems} _addDateCb={this._addDate}/>
           <ShowList itemNames={this.state.toDoList} _removeItemsCb={this._removeItems}/>
         </div>
       )
@@ -62,9 +69,16 @@ import ReactDOM from 'react-dom';
       })
     },
 
+    _handleAddDate: function(){
+      this.props._addDateCb(this.state.newItem);
+      this.setState({
+        newitem: ''
+      })
+    },
+
     _handleKeyPress: function(event){
       if(event.key === 'Enter'){
-        console.log(event)
+        // console.log(event)
         this.props._updateItemsCb(this.state.newItem);
         this.setState({
           newItem:''
@@ -75,10 +89,15 @@ import ReactDOM from 'react-dom';
     render: function(){
       return (
       <div className="item-input">
-        <input type="text" value={this.state.newItem} onChange={this._updateNewItem} onKeyPress={this._handleKeyPress}/>
-        <button onClick={this._handleAddNew}>
-          <i className="fa fa-plus"/>
-        </button>
+        <div className="item-input__text">
+          <input type="text" value={this.state.newItem} onChange={this._updateNewItem} onKeyPress={this._handleKeyPress}/>
+          <button onClick={this._handleAddNew}>
+            <i className="fa fa-plus"/>
+          </button>
+        </div>
+        <div className="item-input__date">
+          <input type="date" onChange={this._handleAddDate}/>
+        </div>
       </div>
       )
     }
